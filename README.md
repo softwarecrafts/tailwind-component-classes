@@ -50,11 +50,11 @@ Which would be the equivalent to doing:
 
 ## Todo
 
-- publish to npm
-- Market to other places (TW discord)
-- build out examples of presets, extend
-- tests
-- Support nested classes (basically how colours work). for example:
+- [] publish to npm
+- [] Market to other places (TW discord)
+- [] build out examples of presets, extend
+- [] tests
+- [] Support nested classes (basically how colours work). for example:
 
 This config:
 
