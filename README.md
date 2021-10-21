@@ -26,6 +26,7 @@ configure your classes in the theme section:
 
 ```
     ...
+    theme: {...},
     components: {
         btn: "text-blue-400 bg-gray-900 border shadow border-blue-500 hover:bg-red-900",
     }
@@ -54,13 +55,14 @@ Which would be the equivalent to doing:
 - [ ] Market to other places (TW discord)
 - [ ] build out examples of presets, extend
 - [ ] tests
-- [ ] Support nested classes (basically how colours work). for example:
+- [x] Support nested classes (basically how colours work). for example:
 
 This config:
 
 ```
 {
     btn: {
+        _: "border-blue-400"
         primary: "bg-blue-400",
         secondary: "bg-green-400"
         error: "bg-red-400"
@@ -75,6 +77,7 @@ This config:
 would generate these class names:
 
 ```
+.btn
 .btn-primary
 .btn-secondary
 .btn-error
