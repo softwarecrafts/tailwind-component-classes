@@ -1,6 +1,11 @@
-# Tailwind Component Classes - Work in Progress
+# Tailwind Component Classes
 
-This is currently a proof of concept to use your tailwind.config.js and it's associated architecture to build up custom classes without jumping into a css file
+This is currently a proof of concept to use your tailwind.config.js and it's associated architecture to build up custom classes without jumping extending the tailwind css file.
+
+- Simple declarative format for more complex classes
+- Use all of tailwind's existing prefixes
+- Make use of presets and the extend funcationality to share classes across projects
+- Define an optional base class that can be extended to avoid repetion (see example below)
 
 ## Usage
 
@@ -49,15 +54,7 @@ Which would be the equivalent to doing:
 </div>
 ```
 
-## Todo
-
-- [ ] Market to other places (TW discord)
-- [ ] publish to npm
-- [ ] tests
-- [ ] Documentation
-- [ ] build out examples of presets, extend - scripts to easily run them - look at other plugins?
-- [x] support for the extend keyword and merging configs
-- [x] Support nested classes (basically how colours work). for example:
+## A more complex example
 
 This config:
 
@@ -76,13 +73,34 @@ This config:
 }
 ```
 
-would generate these class names:
+would be the equivalent to declaring this in a css file using the `@apply` rule:
 
 ```
-.btn
-.btn-primary
-.btn-secondary
-.btn-error
-.heading-1
-.heading-2
+.btn {
+    @apply border-blue-400;
+}
+.btn-primary {
+    @apply border-blue-400 bg-blue-400;
+}
+.btn-secondary {
+    @apply border-blue-400 bg-green-400;
+}
+.btn-error {
+    @apply border-blue-400 bg-red-400;
+}
+.heading-1 {
+    @apply text-4xl;
+}
+.heading-2 {
+    @apply text-3xl;
+}
 ```
+
+## Using a preset
+
+Additionally you can use the tailwind preset functionality to share and extend components. See the `examples/advanced` directory for a working example.
+
+## Todo
+
+- [ ] tests
+- [ ] build out examples of presets, extend - scripts to easily run them (package.json, better layout)
