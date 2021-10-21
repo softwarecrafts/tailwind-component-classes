@@ -51,10 +51,12 @@ Which would be the equivalent to doing:
 
 ## Todo
 
-- [ ] publish to npm
 - [ ] Market to other places (TW discord)
-- [ ] build out examples of presets, extend
+- [ ] publish to npm
 - [ ] tests
+- [ ] Documentation
+- [ ] build out examples of presets, extend - scripts to easily run them - look at other plugins?
+- [x] support for the extend keyword and merging configs
 - [x] Support nested classes (basically how colours work). for example:
 
 This config:

@@ -14,5 +14,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/softwarecrafts/tailwind-component-classes.git"
+  },
+  "dependencies": {
+    "tailwindcss": "^2.2.17"
   }
 }
