@@ -59,7 +59,7 @@ Which would be the equivalent to doing:
 This config:
 
 ```
-{
+components: {
     btn: {
         _: "border-blue-400"
         primary: "bg-blue-400",
