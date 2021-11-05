@@ -1,4 +1,4 @@
-const flattenObject = (objIn, baseKeyIn = undefined) => {
+const flattenObject = (objIn, funcOpts, baseKeyIn = undefined) => {
   const { _, ...obj } = objIn;
   const baseValue = _ !== undefined ? `${_} ` : "";
   return Object.assign(
@@ -9,14 +9,15 @@ const flattenObject = (objIn, baseKeyIn = undefined) => {
         }
       : {},
     ...Object.entries(obj ?? {}).flatMap(([key, values]) => {
-      const baseKey = typeof values == "object" && values.hasOwnProperty("_") ? key : baseKeyIn;
-      return typeof values == "object"
-        ? Object.entries(flattenObject(values, baseKey)).map(([subKey, value]) => {
+      const resolvedValues = typeof values == "function" ? values(funcOpts) : values;
+      const baseKey = typeof resolvedValues == "object" && resolvedValues.hasOwnProperty("_") ? key : baseKeyIn;
+      return typeof resolvedValues == "object"
+        ? Object.entries(flattenObject(resolvedValues, funcOpts, baseKey)).map(([subKey, value]) => {
             return {
               [key + (subKey === "DEFAULT" ? "" : subKey === key ? "" : `-${subKey}`)]: `${value}`,
             };
           })
-        : [{ [`${key}`]: `@apply ${baseValue}${values}` }];
+        : [{ [`${key}`]: `@apply ${baseValue}${resolvedValues}` }];
     })
   );
 };
