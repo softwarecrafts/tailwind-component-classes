@@ -5,7 +5,7 @@ const flattenObject = (objIn, funcOpts, baseKeyIn = undefined) => {
     {},
     baseKeyIn !== undefined
       ? {
-          [`${baseKeyIn}`]: `@apply ${_}`,
+          [`${baseKeyIn}`]: `${_}`,
         }
       : {},
     ...Object.entries(obj ?? {}).flatMap(([key, values]) => {
@@ -17,7 +17,7 @@ const flattenObject = (objIn, funcOpts, baseKeyIn = undefined) => {
               [key + (subKey === "DEFAULT" ? "" : subKey === key ? "" : `-${subKey}`)]: `${value}`,
             };
           })
-        : [{ [`${key}`]: `@apply ${baseValue}${resolvedValues}` }];
+        : [{ [`${key}`]: `${baseValue}${resolvedValues}` }];
     })
   );
 };
