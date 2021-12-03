@@ -1,6 +1,6 @@
 {
   "name": "tailwind-component-classes",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Create custom classes in your tailwind config",
   "main": "index.js",
   "scripts": {
