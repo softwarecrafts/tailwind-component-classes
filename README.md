@@ -1,11 +1,14 @@
-# Tailwind Component Classes
+# Tailwind CSS Component Classes
 
-This is currently a proof of concept to use your tailwind.config.js and it's associated architecture to build up custom classes without jumping extending the tailwind css file.
+This plugin is designed to use your tailwind.config.js and it's associated architecture to build up custom classes without the need to extend a custom css file.
+
+## Features
 
 - Simple declarative format for more complex classes
 - Use all of tailwind's existing prefixes
 - Make use of presets and the extend funcationality to share classes across projects
 - Define an optional base class that can be extended to avoid repetion (see example below)
+- Use existing declared classes to create new classes
 
 ## Usage
 
@@ -96,11 +99,13 @@ would be the equivalent to declaring this in a css file using the `@apply` rule:
 }
 ```
 
+## What's with the underscore in the above example?
+
+This plugin adds an `_` option when declaring an object in the components object (see the btn object in the above example). The `_` key creates a base class as well as
+merging these base CSS classes with every other classes declared at that level. The primary reason for this is to help reduce duplication when declaring components in the config file.
+
 ## Using a preset
 
 Additionally you can use the tailwind preset functionality to share and extend components. See the `examples/advanced` directory for a working example.
 
-## Todo
-
-- [ ] tests
-- [ ] build out examples of presets, extend - scripts to easily run them (package.json, better layout)
+When using presets ensure that the plugin is only defined once otherwise classes will be generated multiple times increasing the size of the generated css file.
