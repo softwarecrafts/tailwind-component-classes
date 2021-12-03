@@ -1,3 +1,4 @@
+const componentsClassPlugin = require("../../index");
 module.exports = {
   components: {
     btn: {
@@ -10,4 +11,5 @@ module.exports = {
       2: "text-3xl",
     },
   },
+  plugins: [componentsClassPlugin],
 };

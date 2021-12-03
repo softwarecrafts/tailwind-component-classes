@@ -10,17 +10,17 @@ module.exports = {
     extend: {
       btn: {
         success: "bg-green-400 text-gray-900 border-green-700",
+        heading: "heading-1",
       },
     },
     heading: {
       _: "font-light",
-      1: "text-4xl",
-      2: "text-3xl",
+      1: "text-7xl",
+      2: "text-6xl",
     },
   },
   variants: {
     extend: {},
   },
-  plugins: [componentsClassPlugin],
   presets: [require("./base.config")],
 };
