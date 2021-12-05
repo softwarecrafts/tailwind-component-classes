@@ -9,6 +9,7 @@ This plugin is designed to use your tailwind.config.js and it's associated archi
 - Make use of presets and the extend funcationality to share classes across projects
 - Define an optional base class that can be extended to avoid repetion (see example below)
 - Use existing declared classes to create new classes
+- Hooks into Tailwind's 3 layers: base, components & utilities
 
 ## Usage
 
