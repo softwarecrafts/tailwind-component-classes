@@ -1,8 +1,12 @@
 {
   "name": "tailwind-component-classes",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "description": "Create custom classes in your tailwind config",
   "main": "index.js",
+  "exports": {
+    "import": "./index.js",
+    "require": "./index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,5 +22,10 @@
   "dependencies": {
     "tailwind-merge": "^0.9.0",
     "tailwindcss": "^2.2.17"
-  }
+  },
+  "keywords": [
+    "tailwindcss",
+    "tailwindcss plugin"
+  ],
+  "types": "index.d.ts"
 }
