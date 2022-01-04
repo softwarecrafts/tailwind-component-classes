@@ -1,4 +1,4 @@
-const componentsClassPlugin = require("../../index");
+const componentsClassPlugin = require("../..");
 module.exports = {
   components: {
     btn: {
