@@ -11,6 +11,16 @@ This plugin is designed to use your tailwind.config.js and it's associated archi
 - Use existing declared classes to create new classes
 - Hooks into Tailwind's 3 layers: base, components & utilities
 
+## Quickstart
+
+Here are some examples of what's possible on the Tailwind CSS Playground
+
+- Demo (spot the difference!): https://play.tailwindcss.com/oP6UznVP9J
+- Simple Example: https://play.tailwindcss.com/4KpGKazbeS
+- Advanced Example: https://play.tailwindcss.com/u4p5utf00J
+- Functions: https://play.tailwindcss.com/0frdJch6Fo?file=config
+- Design Library: https://play.tailwindcss.com/PCDEoF6B5w?file=config (Replicating DaisyUI Buttons - WIP)
+
 ## Usage
 
 First:
@@ -54,7 +64,7 @@ Which would be the equivalent to doing:
 
 ```
 <div>
-    <a class="text-blue-400 bg-gray-900 border shadow border-blue-500 hover:bg-red-900">This is a button</a>
+    <a class="text-blue-400 bg-gray-900 border border-blue-500 shadow hover:bg-red-900">This is a button</a>
 </div>
 ```
 
@@ -103,7 +113,7 @@ would be the equivalent to declaring this in a css file using the `@apply` rule:
 ## What's with the underscore in the above example?
 
 This plugin adds an `_` option when declaring an object in the components object (see the btn object in the above example). The `_` key creates a base class as well as
-merging these base CSS classes with every other classes declared at that level. The primary reason for this is to help reduce duplication when declaring components in the config file.
+merging these base CSS classes with every other classes declared at that level. The primary motivation for this is to help reduce duplication when declaring components in the config file.
 
 ## Using a preset
 
